@@ -8,5 +8,8 @@ def send(request,id):
     # print("hello world")
 
 def product(request,id):
-    products = ["Watch","Rings","Necklace","Bracelet","shoes"]
-    return HttpResponse(products[id])
+    products = ["Watch","Rings","Necklace","Bracelet","Gold Coins","Earrings","Chain","Nose pins","Anklets"]
+    return HttpResponse(products[id]) 
+
+def call(request):
+    return render(request,"index.html")

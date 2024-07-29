@@ -21,5 +21,6 @@ from app1 import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("home/<int:id>",views.send),
-    path("products/<int:id>",views.product)
+    path("products/<int:id>",views.product),
+    path("home1/",views.call)
 ]
