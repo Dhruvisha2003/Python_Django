@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title></title>
 </head>
 <body>
-    <h1>hello world</h1>
+    
+       
+        <table border="1" style="margin-bottom: 30px;">
+        <tr>
+            <td colspan="4"> {{name}}</td>
+        </tr>
+        <tr>
+            <td colspan="4">{{price}}</td>
+        </tr>
+        <tr>
+            <td colspan="4">{{offers}}</td>
+        </tr>
+        <tr>
+            {% for i in color%}
+            <td>{{i}}</td>
+            {%endfor%}
+        </tr>
+        <tr>
+            {% for i in size%}
+            <td>{{i}}</td>
+            {%endfor%}
+        </tr>
+    </table>
+        
 </body>
 </html>

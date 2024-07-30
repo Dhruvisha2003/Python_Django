@@ -21,6 +21,6 @@ from firstapp.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', home),
+    path('home/<int:id>', home),
     path('index/', index),
 ]
