@@ -14,3 +14,8 @@ def contact(request):
 def service(request):
     return render(request, 'service.html')
 
+def portfolio(request):
+    return render(request, 'portfolio.html')
+
+def testimonials(request):
+    return render(request, 'testimonials.html')
