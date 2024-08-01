@@ -19,3 +19,19 @@ def portfolio(request):
 
 def testimonials(request):
     return render(request, 'testimonials.html')
+
+def header(request):
+    return render(request, 'header.html')
+def footer(request):
+    return render(request, 'footer.html')
+
+def form(request):
+    name=""
+    email=""
+    password=""
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        password = request.POST['password']
+        
+    return render(request,"form.html",{"name":name,"email":email,"password":password})
