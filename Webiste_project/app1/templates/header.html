@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <link rel="stylesheet" href="../static/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!---icon-->
+    <link rel="icon" href="https://cdn.icon-icons.com/icons2/3245/PNG/512/bootstrap_icon_198286.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+       <!-- Header Start -->
+       <header>
+        <!-- <div class="container-fluid"> -->
+        <div class="container-fluid fixed-top pt-3" style="background-color: white; opacity: 90%;">
+            <div class="row padding">
+                <div class="col-2">
+                    <h3 style="font-weight: 600; margin-left: 80px; font-size: 25px;">LUMIA</h3>
+                </div>
+                <div class="col-9">
+                    <ul class="nav d-flex justify-content-end">
+                        <li class="nav-item">
+                            <a class="link" href="/home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="link" href="{% url 'ab' %}">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="link" href="/service" >Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="link" href="/portfolio" >Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="link" href="/testimonials">Testimonials</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="link" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown <i class="fa-solid fa-caret-down" style="color: #a5a9b1;"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li><a class="dropdown-item " href="#">Dropdown</a></li>
+                                <li><a class="dropdown-item" href="#">Dropdown 1</a></li>
+                                <li><a class="dropdown-item" href="#"> Dropdown 2</a></li>
+                                <li><a class="dropdown-item" href="#"> Dropdown 3</a></li>
+                                <li><a class="dropdown-item" href="#"> Dropdown 4</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="link" href="/contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-1 d-flex mt-1">
+                    <i class="fa-brands fa-twitter fa-head"></i>
+                    <i class="fa-brands fa-facebook fa-head"></i>
+                    <i class="fa-brands fa-instagram fa-head"></i>
+                    <i class="fa-brands fa-linkedin fa-head"></i>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+    </header>
+</body>
+</html>
