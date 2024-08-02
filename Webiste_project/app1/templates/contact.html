@@ -1,0 +1,89 @@
+{%include "header.html"%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="../static/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!---icon-->
+    <link rel="icon" href="https://cdn.icon-icons.com/icons2/3245/PNG/512/bootstrap_icon_198286.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+     <!-- Contact Section  -->
+     <section class="contact pt-5 pb-5" style="background-color: #f7fbfe;">
+        <div class="container">
+            <div class="text-center pb-2 section-title mt-5">
+                <h2>Contact</h2>
+                <p class="text">Necessitatibus eius consequatur ex aliquid fuga eum quidem</p>
+            </div>
+            <div class="row mt-5 justify-content-center">
+                <div class="col-lg-10">
+                    <div class="info-wrap" style="padding: 30px; background-color: white; border-radius: 4px;">
+                        <div class="row">
+                            <div class="col-4 info">
+                                <i class="fa-solid fa-location-dot fa-xl"
+                                    style="color: #74C0FC; border: 1px solid rgb(252, 254, 254); border-radius: 50px; background-color: #eaf4fb;"></i>
+                                <h4 style="padding-left: 60px; font-size: 21px;">Location:</h4>
+                                <p class="text" style="font-size: 14px; padding-left: 60px;">A108 Adam
+                                    Street<br>NewYork, NY 535022</p>
+                            </div>
+                            <div class="col-4 info">
+                                <i class="fa-regular fa-envelope fa-xl"
+                                    style="color: #74C0FC; border: 1px solid rgb(252, 254, 254); border-radius: 50px; background-color: #eaf4fb;"></i>
+                                <h4 style="padding-left: 60px; font-size: 21px;">Email:</h4>
+                                <p class="text" style="font-size: 14px; padding-left: 60px;">
+                                    info@example.com<br>contact@example.com</p>
+                            </div>
+                            <div class="col-4 info">
+                                <i class="fa-solid fa-mobile-screen-button fa-xl"
+                                    style="color: #74C0FC; border: 1px solid rgb(252, 254, 254); border-radius: 50px; background-color: #eaf4fb;"></i>
+                                <h4 style="padding-left: 60px; font-size: 21px;">Call:</h4>
+                                <p class="text" style="font-size: 14px; padding-left: 60px;">+1 5589 55488 51
+                                    <br>+1 5589 22475 14
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5 justify-content-center">
+                <div class="col-lg-10">
+                    <div class="Email-form"
+                        style="width: 100%; padding: 30px; background-color: white; border-radius: 4px;">
+                        <div class="row">
+                            <div class="col-6 pb-4">
+                                <input type="text" name="name" placeholder="Your Name" class="form-control">
+                            </div>
+                            <div class="col-6 pb-4">
+                                <input type="text" name="email" placeholder="Email" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col pb-4">
+                                <input type="text" name="subject" placeholder="Subject" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col pb-4">
+                                <textarea name="message" placeholder="Message" rows="10"
+                                    class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                           <button type="submit" class="send">Send Message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+{%include "footer.html"%}
