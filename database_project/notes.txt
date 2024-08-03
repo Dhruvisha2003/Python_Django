@@ -1,0 +1,12 @@
+models.py = 
+    create class with some name (that is our table)
+    define fields with their data types
+
+views.py =
+    insert data into table in views.py file
+
+run some command for database
+1 . py manage.py makemigrations [it create new file in migration folder and add our table in it]
+2 . py manage.py migrate [it apply the migration and create table in database]
+ 
+now run project
