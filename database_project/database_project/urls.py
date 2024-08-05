@@ -20,5 +20,9 @@ from App import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('Home/', views.home),
+    path('home/', views.home,name="home"),
+    path('show/',views.show,name="show"),
+    path('show/<int:id>/',views.showone,name="showone"),
+    path('delete/<int:id>/',views.deldata,name="delete"),
+    path('update/<int:id>/',views.update,name="update")
 ]

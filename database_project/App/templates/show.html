@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Data</title>
+    <style>
+        .container{
+            position: absolute;
+            top: 17%;
+            left: 28%;
+        }
+        td{
+            width: 80px;
+        }
+        h3{
+            text-align: center;
+            background-color: lightslategray;
+            border: 1px solid grey;
+            padding-inline: 30px;
+            padding-block: 10px;
+            color: black;
+        }
+        .ins{
+            background-color: rgba(0, 66, 128, 0.712);
+            text-decoration: none;
+            color:white;
+            padding-inline: 20px;
+            padding-block: 8px;
+        }
+        .dis{
+            background-color: rgba(0, 128, 0, 0.848);
+            color: white;
+            padding: 6px;
+            text-decoration: none;
+        }
+        .del{
+            background-color: rgba(255, 0, 0, 0.917);
+            color: white;
+            padding: 6px;
+            text-decoration: none;
+        }
+        .up{
+            background-color: rgb(214, 214, 24);
+            color: black;
+            padding: 6px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+    <div class="heading">
+        <h3>DISPLAY DATA</h3>
+    </div>
+    <table border="1" style="text-align: center;">
+        <tr>
+            <th style="padding: 10px;">Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Display</th>
+            <th>Delete</th>
+            <th>Edit</th>
+        </tr>
+        {%for i in data%}
+        <tr>
+            <td style="padding: 10px;">{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.password}}</td>
+            <td ><a class="dis" href="{% url 'showone' i.id %}">Display</a></td>
+            <td ><a class="del" href="{% url 'delete' i.id %}">Delete</a></td>
+            <td ><a class="up" href="{% url 'update' i.id %}">Edit</a></td>
+        </tr>
+        {%endfor%}
+    </table><br>
+    <a href="{% url 'home' %}" class="ins">Add New Record</a>
+   </div>
+</body>
+</html>

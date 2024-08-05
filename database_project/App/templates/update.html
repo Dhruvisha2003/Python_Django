@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form</title>
+    <title>Update Details</title>
     <style>
         body{
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -45,15 +45,15 @@
         <table>
           <tr>
             <td style="width: 100px;"><label for="uname"><b>Name :</b></label></td>
-            <td><input type="text" placeholder="Enter Name..." name="name" required/><br /></td>
+            <td><input type="text" placeholder="Enter Name..." name="name" value="{{data.name}}" required/><br /></td>
           </tr>
           <tr>
             <td><label for="email"><b>Email :</b></label></td>
-            <td><input type="email" placeholder="Enter Email..." name="email" required/><br /></td>
+            <td><input type="email" placeholder="Enter Email..." name="email" value="{{data.email}}" required/><br /></td>
           </tr>
           <tr>
             <td><label for="psw"><b>Password :</b></label></td>
-            <td> <input type="password" placeholder="Enter Password..." name="password" required/><br />
+            <td> <input type="password" placeholder="Enter Password..." name="password" value="{{data.password}}" required/><br />
             </td>
           </tr>
         </table><br><br>
