@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registartion page</title>
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+    <scrip src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormoran+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,6001,700&display=swap');
+        h3{
+            font-family: "Cormorant Garamond", serif;
+            color: rgb(0, 0, 0);
+            font-weight: 800;
+            font-size: 40px;
+            position: absolute;
+            top: 7%;
+            left: 30%;
+        }
+        .register{
+            width: 500px;
+            height: 700px;
+            position: absolute;
+            top: 10%;
+            left: 28%;
+            border: 1px solid black;
+        }
+        input[type='email'],input[type='password'],input[type="text"]{
+            width: 400px;
+            padding: 10px;
+            margin-inline: 40px;
+        }
+        input[type="radio"]{
+            margin-left: 40px;
+        }
+        .button{
+            width: 80%;
+            position: absolute;
+            top: 80%;
+            left: 10%;
+            padding-inline: 40px;
+            padding-block: 10px;
+            background-color: black;
+            color: white;
+            /* border: 2px solid rgba(184, 189, 187, 0.877); */
+            transition: .2s;
+        }
+        .button:hover{
+            background-color: rgb(28, 28, 28);
+        }
+        p{
+            color: royalblue;
+            position: absolute;
+            left: 34%;
+            top:88%;
+        }
+        label{
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 800;
+            font-size: 18px;
+        }
+        form{
+            margin-top: 80px;
+            margin-left: 20px;
+        }
+            
+    </style>
+</head>
+<body>
+    <div class="registration-page">
+        <div class="heading flex items-center">
+            <h3 class="text-5xl">REGISTRATION PAGE </h3>
+          </div>
+          <div class="register mt-5">
+            <form action="" method="post">
+                {% csrf_token %}
+                <label for="fname">First Name</label>
+                <input type="text" name="fname" placeholder="Enter Your First-Name Here....">
+                <label for="lname">Last Name</label>
+                <input type="text" name="lname" placeholder="Enter Your Last-Name Here....">
+                <label for="gender">Gender</label><br>
+                <input type="radio" name="gender" value="male"> Male<br>
+                <input type="radio" name="gender" value="female"> Female <br>
+                <label for="email">Email</label>
+                <input class="" type="email" name="email" placeholder="Enter Your Email Here...."/>
+                <label for="password">Password</label>
+                <input type="password" name="password" placeholder="Enter Your Password Here...."/>
+                <button class="button">Register</button>
+                <div class="">
+                <p><a href="register.html">Already have an Account?</a></p>
+              </div>
+            </form>
+          </div>
+    </div>
+</body>
+</html>

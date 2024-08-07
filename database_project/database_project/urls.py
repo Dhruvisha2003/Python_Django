@@ -24,5 +24,7 @@ urlpatterns = [
     path('show/',views.show,name="show"),
     path('show/<int:id>/',views.showone,name="showone"),
     path('delete/<int:id>/',views.deldata,name="delete"),
-    path('update/<int:id>/',views.update,name="update")
+    path('update/<int:id>/',views.update,name="update"),
+    path('login/',views.login),
+    path('register/',views.register),
 ]

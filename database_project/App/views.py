@@ -39,3 +39,18 @@ def update(request,id):
         data.save()
         return redirect('show')
     return render(request,"update.html",{"data":data}) 
+
+def login(request):
+    return render(request,'login.html')
+
+def register(request):
+    if request.method == 'POST':
+        fname = request.POST['fname']
+        lname = request.POST['lname']
+        gender = request.POST['gender']
+        email = request.POST['email']
+        password = request.POST['password']
+
+        user = User.objects.filter(fname=fname,lname=lname,gender=gender,email=email,password=password)
+        user.save()
+    return render(request,'register.html')
