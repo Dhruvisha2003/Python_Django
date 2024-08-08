@@ -20,7 +20,7 @@
         }
         .register{
             width: 500px;
-            height: 700px;
+            height: 650px;
             position: absolute;
             top: 10%;
             left: 28%;
@@ -37,7 +37,7 @@
         .button{
             width: 80%;
             position: absolute;
-            top: 80%;
+            top: 75%;
             left: 10%;
             padding-inline: 40px;
             padding-block: 10px;
@@ -75,10 +75,8 @@
           <div class="register mt-5">
             <form action="" method="post">
                 {% csrf_token %}
-                <label for="fname">First Name</label>
-                <input type="text" name="fname" placeholder="Enter Your First-Name Here....">
-                <label for="lname">Last Name</label>
-                <input type="text" name="lname" placeholder="Enter Your Last-Name Here....">
+                <label for="name">Name</label>
+                <input type="text" name="name" placeholder="Enter Your Name Here....">
                 <label for="gender">Gender</label><br>
                 <input type="radio" name="gender" value="male"> Male<br>
                 <input type="radio" name="gender" value="female"> Female <br>

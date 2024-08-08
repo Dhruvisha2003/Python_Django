@@ -8,16 +8,13 @@ class User(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+gender_choices=(('male',"Male"),
+                ('female',"Female"))
 
-GENDER_CHOICES= [
-    ('male', 'Male'),
-    ('female', 'Female'),
-]
 
 class register(models.Model):
-    fname = models.TextField(max_length=255)
-    lname = models.TextField(max_length=255)
-    gender = models.TextField(max_length=6,choices=GENDER_CHOICES)
+    name = models.TextField(max_length=255)
+    gender = models.TextField(max_length=10,choices=gender_choices)
     email = models.EmailField(max_length=255, unique=True)
     password = models.TextField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)

@@ -14,9 +14,8 @@ class Migration(migrations.Migration):
             name='register',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('fname', models.TextField(max_length=255)),
-                ('lname', models.TextField(max_length=255)),
-                ('gender', models.CharField(choices=[('male', 'Male'), ('female', 'Female'), ('other', 'Other')], max_length=6)),
+                ('name', models.TextField(max_length=255)),
+                ('gender', models.CharField(choices=[('male', 'Male'), ('female', 'Female')], max_length=6)),
                 ('email', models.EmailField(max_length=255, unique=True)),
                 ('password', models.TextField(max_length=255)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),

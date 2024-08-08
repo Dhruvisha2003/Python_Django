@@ -45,12 +45,16 @@ def login(request):
 
 def register(request):
     if request.method == 'POST':
-        fname = request.POST['fname']
-        lname = request.POST['lname']
-        gender = request.POST['gender']
-        email = request.POST['email']
-        password = request.POST['password']
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        gender = request.POST.get('gender') 
 
-        user = User.objects.filter(fname=fname,lname=lname,gender=gender,email=email,password=password)
-        user.save()
-    return render(request,'register.html')
+        users = User.objects.filter(
+            name=name,
+            email=email,
+            password=password,
+            gender={'male':'Male','female':'Female'}
+        )
+
+    return render(request, 'register.html')
