@@ -25,6 +25,6 @@ urlpatterns = [
     path('show/<int:id>/',views.showone,name="showone"),
     path('delete/<int:id>/',views.deldata,name="delete"),
     path('update/<int:id>/',views.update,name="update"),
-    path('login/',views.login),
-    path('register/',views.register),
+    path('login/',views.login,name='login'),
+    path('register/',views.insert1,name="register"),
 ]
