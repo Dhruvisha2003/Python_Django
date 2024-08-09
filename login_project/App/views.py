@@ -20,7 +20,7 @@ def insert2(request):
         password = request.POST.get('password')
         data = User.objects.filter(email=email,password=password)
         if data:
-            return HttpResponse("Hello!!")
+            return HttpResponse('Welcome!!')
         else:
             return HttpResponse("Invalid Email or Password")
     else:
