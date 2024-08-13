@@ -2,7 +2,7 @@ from django.shortcuts import *
 from App.models import User
 # Create your views here.
 
-def insert1(request):
+def signup(request):
     if request.method == 'POST':
         name = request.POST['name']
         contact = request.POST['contact']
@@ -14,7 +14,7 @@ def insert1(request):
         return redirect('login')
     return render(request,'register.html')
         
-def insert2(request):
+def signin(request):
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
