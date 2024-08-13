@@ -20,5 +20,8 @@ from Marks import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('details/',views.input)
+    path('details/',views.input,name="home"),
+    path('show/',views.output,name="data_table"),
+    path('delete/<int:id>/',views.deldata,name="delete"),
+    path('update/<int:id>/',views.update,name="update"),
 ]

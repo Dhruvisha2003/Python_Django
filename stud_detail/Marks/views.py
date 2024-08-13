@@ -1,72 +1,84 @@
-from django.shortcuts import render
+from django.shortcuts import *
+from Marks.models import stud
 
 # Create your views here.
 #create student form that have their name and marks of 5 subject then print total per minimum marks and grade
 
 def input(request):
     if request.method == "POST" :
+        try:
+            name = request.POST['name']
+            marks1 = request.POST['marks1']
+            marks2 = request.POST['marks2']
+            marks3 = request.POST['marks3']
+            marks4 = request.POST['marks4']
+            marks5 = request.POST['marks5']
+            total = int(marks1) + int(marks2) +int (marks3) + int(marks4) + int(marks5)
+            percentage = (total/500)*100
+            if percentage >= 90 :
+                grade = 'A'
+            elif percentage >= 80 :
+                grade = 'B'
+            elif percentage >= 70 :
+                grade = 'C'
+            elif percentage >= 60 :
+                grade = 'D'
+            else:
+                grade = 'F'
+            
+            min_marks = min(marks1, marks2, marks3, marks4, marks5)
+    
+            data = stud(name=name,marks1=marks1,marks2=marks2,marks3=marks3,marks4=marks4,marks5=marks5,total=total,percentage=percentage,     grade=grade,min_marks=min_marks)
+            data.save()
+            return redirect('data_table')
+        except ValueError:
+            return render(request, 'home.html', {'error': 'Invalid input. Please enter valid numbers.'})
+    return render(request,'home.html')                
+
+
+def output(request):
+    data  = stud.objects.all()
+    return render(request, 'show.html',{'data':data})
+
+def deldata(request,id):
+    data = stud.objects.get(id=id)
+    data.delete()
+    return redirect('data_table')
+
+def update(request,id):
+    data = stud.objects.get(id=id)
+    if request.method == "POST":
         name = request.POST['name']
         marks1 = request.POST['marks1']
         marks2 = request.POST['marks2']
         marks3 = request.POST['marks3']
         marks4 = request.POST['marks4']
         marks5 = request.POST['marks5']
-        total = int(marks1) + int(marks2) + int(marks3) + int(marks4) + int(marks5)
-        per = (total/5)*100
-        if per >= 90 :
+        total = int(marks1) + int(marks2) +int (marks3) + int(marks4) + int(marks5)
+        percentage = float(total/500)*100
+        if percentage >= 90 :
             grade = 'A'
-        elif per >= 80 :
+        elif percentage >= 80 :
             grade = 'B'
-        elif per >= 70 :
+        elif percentage >= 70 :
             grade = 'C'
-        elif per >= 60 :
+        elif percentage >= 60 :
             grade = 'D'
         else:
             grade = 'F'
-        if marks1 < marks2 :
-            if marks1 < marks3:
-                if marks1 < marks4:
-                    if marks1 < marks5:
-                        min_marks = marks1
-                    else:
-                        min_marks = marks5
-                else:
-                    if marks4 < marks5:
-                        min_marks = marks4
-                    else:
-                        min_marks = marks5
-            else:
-                if marks3 < marks4:
-                    if marks3 < marks5:
-                        min_marks = marks3
-                    else:
-                        min_marks = marks5
-                else:
-                    if marks4 < marks5:
-                        min_marks = marks4
-                    else:
-                        min_marks = marks5
-        else:
-            if marks2 < marks3:
-                if marks2 < marks4:
-                    if marks2 < marks5:
-                        min_marks = marks2
-                    else:
-                        min_marks = marks5
-                else:
-                    if marks4 < marks5:
-                        min_marks = marks4
-                    else:
-                        min_marks = marks5
-            else:
-                if marks3 < marks4:
-                    if marks3 < marks5:
-                        min_marks = marks3
-                    else:
-                        min_marks = marks5
-                else:
-                    if marks4 < marks5:
-                        min_marks = marks4
-                    else:
-                        min_marks = marks5
-                        
+        
+        min_marks = min(marks1, marks2, marks3, marks4, marks5)
+
+        data.name = name
+        data.marks1 = marks1
+        data.marks2 = marks2
+        data.marks3 = marks3
+        data.marks4 = marks4
+        data.marks5 = marks5
+        data.total = total
+        data.percentage = percentage
+        data.grade = grade
+        data.min_marks = min_marks
+        data.save()
+        return redirect('data_table')
+    return render(request,'update.html',{"data":data})

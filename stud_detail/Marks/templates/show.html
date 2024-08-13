@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Data</title>
+    <style>
+    
+        td{
+            width: 80px;
+        }
+        h3{
+            text-align: center;
+            background-color: lightslategray;
+            border: 1px solid grey;
+            padding-inline: 30px;
+            padding-block: 10px;
+            color: black;
+        }
+        .ins{
+            background-color: rgba(0, 66, 128, 0.712);
+            text-decoration: none;
+            color:white;
+            padding-inline: 30px;
+            padding-block: 10px;
+        }
+        .dis{
+            background-color: rgba(0, 128, 0, 0.848);
+            color: white;
+            padding: 6px;
+            text-decoration: none;
+        }
+        .del{
+            background-color: rgba(255, 0, 0, 0.917);
+            color: white;
+            padding: 6px;
+            text-decoration: none;
+        }
+        .up{
+            background-color: rgb(245, 245, 28);
+            color: black;
+            padding: 6px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+    <div class="heading">
+        <h3>DISPLAY DATA</h3>
+    </div>
+    <table border="1" style="text-align: center;">
+        <tr>
+            <th style="padding: 10px;">Id</th>
+            <th style="width: 90px; padding: 10px;">Name</th>
+            <th style="width: 90px; padding: 10px;">Subject1</th>
+            <th style="width: 90px; padding: 10px;">Subject2</th>
+            <th style="width: 90px; padding: 10px;">Subject3</th>
+            <th style="width: 90px; padding: 10px;">Subject4</th>
+            <th style="width: 90px; padding: 10px;">Subject5</th>
+            <th style="width: 90px; padding: 10px;">Total</th>
+            <th style="width: 90px; padding: 10px;">Percentage</th>
+            <th style="width: 90px; padding: 10px;">Grade</th>
+            <th style="width: 90px; padding: 10px;">Min_Marks</th>
+            <th colspan="2">Actions</th>
+        </tr>
+        {%for i in data%}
+        <tr>
+            <td style="width: 90px; padding: 10px;">{{i.id}}</td>
+            <td style="width: 90px; padding: 10px;">{{i.name}}</td>
+            <td style="width: 90px; padding: 10px;">{{i.marks1}}</td>
+            <td style="width: 90px; padding: 10px;">{{i.marks2}}</td>
+            <td style="width: 90px; padding: 10px;">{{i.marks3}}</td>
+            <td style="width: 90px; padding: 10px;">{{i.marks4}}</td>
+            <td style="width: 90px; padding: 10px;">{{i.marks5}}</td>
+            <td style="width: 90px; padding: 10px;">{{i.total}}</td>
+            <td style="width: 90px; padding: 10px;">{{i.percentage}}</td>
+            <td style="width: 90px; padding: 10px;">{{i.grade}}</td>
+            <td style="width: 90px; padding: 10px;">{{i.min_marks}}</td>
+            <td ><a class="del" href="{% url 'delete' i.id %}">Delete</a></td>
+            <td ><a class="up" href="{% url 'update' i.id %}">Edit</a></td>
+        </tr>
+        {%endfor%}
+    </table><br>
+    <a href="{% url 'home' %}" class="ins">Add New Record</a>
+   </div>
+</body>
+</html>
