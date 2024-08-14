@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Details</title>
+    <title>Update Student Details</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -36,6 +36,14 @@
             margin: 20px;
             width: 150px;
         }
+        .ins{
+            text-decoration: none;
+            background-color: rgb(71, 95, 155);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .ins:hover{color: white;}
     </style>
 </head>
 <body>
@@ -47,14 +55,15 @@
             <form action="" method="post">
                 {% csrf_token %}
                 <label class="ml-4 text-base" for="name">Name</label><br>
-                <input type="text" name="name" class="text-sm" placeholder="Enter Name" required><br><br>
+                <input type="text" name="name" class="text-sm" placeholder="Enter Name" value="{{data.name}}" required><br><br>
                 <label for="marks" class="ml-4 text-base">Marks</label><br>
-                <input type="number" name="marks1" placeholder="Subject 1" required><br>
-                <input type="number" name="marks2" placeholder="Subject 2" required><br>
-                <input type="number" name="marks3" placeholder="Subject 3" required><br>
-                <input type="number" name="marks4" placeholder="Subject 4" required><br>
-                <input type="number" name="marks5" placeholder="Subject 5" required><br>
+                <input type="number" name="marks1" placeholder="Subject 1" value="{{data.marks1}}" required><br>
+                <input type="number" name="marks2" placeholder="Subject 2" value="{{data.marks2}}" required><br>
+                <input type="number" name="marks3" placeholder="Subject 3" value="{{data.marks3}}" required><br>
+                <input type="number" name="marks4" placeholder="Subject 4" value="{{data.marks4}}" required><br>
+                <input type="number" name="marks5" placeholder="Subject 5" value="{{data.marks5}}" required><br>
                 <button class="btn">Submit</button>
+                <a href="{% url 'data_table' %}" class="ins">Back to Show Data</a>
             </form>
         </div>
     </div>

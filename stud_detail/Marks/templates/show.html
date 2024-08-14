@@ -12,7 +12,6 @@
         h3{
             text-align: center;
             background-color: lightslategray;
-            border: 1px solid grey;
             padding-inline: 30px;
             padding-block: 10px;
             color: black;
@@ -23,12 +22,6 @@
             color:white;
             padding-inline: 30px;
             padding-block: 10px;
-        }
-        .dis{
-            background-color: rgba(0, 128, 0, 0.848);
-            color: white;
-            padding: 6px;
-            text-decoration: none;
         }
         .del{
             background-color: rgba(255, 0, 0, 0.917);
@@ -64,7 +57,7 @@
             <th style="width: 90px; padding: 10px;">Min_Marks</th>
             <th colspan="2">Actions</th>
         </tr>
-        {%for i in data%}
+        {% for i in data %}
         <tr>
             <td style="width: 90px; padding: 10px;">{{i.id}}</td>
             <td style="width: 90px; padding: 10px;">{{i.name}}</td>
@@ -77,10 +70,11 @@
             <td style="width: 90px; padding: 10px;">{{i.percentage}}</td>
             <td style="width: 90px; padding: 10px;">{{i.grade}}</td>
             <td style="width: 90px; padding: 10px;">{{i.min_marks}}</td>
-            <td ><a class="del" href="{% url 'delete' i.id %}">Delete</a></td>
             <td ><a class="up" href="{% url 'update' i.id %}">Edit</a></td>
+            <td ><a class="del" href="{% url 'delete' i.id %}">Delete</a></td>
+           
         </tr>
-        {%endfor%}
+        {% endfor %}
     </table><br>
     <a href="{% url 'home' %}" class="ins">Add New Record</a>
    </div>
