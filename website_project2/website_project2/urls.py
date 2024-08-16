@@ -20,14 +20,5 @@ from App import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('homepage', views.index, name='index'),
-    # path('aboutpage', views.about, name='about'),
-    # path('contactpage', views.contact, name='contact'),
-    # path('blogpage',views.blog,name='blog'),
-    # path('cartpage',views.addcart,name='cart'),
-    # path('checkoutpage',views.checkout,name='checkout'),
-    # path('services',views.services,name='service'),
-    # path('shop',views.shop,name='shop'),
-    # path('thankyou',views.thanks,name='thanks'),
-    
+    path('home/', views.index, name='index'),
 ]
