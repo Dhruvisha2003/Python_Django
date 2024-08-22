@@ -40,7 +40,7 @@
 				<div class="collapse navbar-collapse" id="navbarsFurni">
 					
 					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-						{% for i in all %}
+						{% for i in menus %}
 						<li class="nav-item">
 							<a class="nav-link" href="">{{i.menu}}</a>
 						</li>
@@ -91,10 +91,11 @@
 					<!-- End Column 1 -->
 
 					<!-- Start Column 2 -->
-					 {% for i in product %}
+					 {% load static %}
+					 {% for i in products_list %}
 					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
 						<a class="product-item" href="../static/cart.html">
-							<img src="{{i.picture}}" class="img-fluid product-thumbnail">
+							<img src="{% static 'images/' %}{{ i.picture }}" class="img-fluid product-thumbnail">
 							<h3 class="product-title">{{i.name}}</h3>
 							<strong class="product-price">{{i.price}}</strong>
 
@@ -105,34 +106,6 @@
 					</div> 
 					{% endfor %}
 					<!-- End Column 2 -->
-
-					<!-- Start Column 3 -->
-					<!-- <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-						<a class="product-item" href="../static/cart.html">
-							<img src="../static/images/product-2.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Kruzo Aero Chair</h3>
-							<strong class="product-price">$78.00</strong>
-
-							<span class="icon-cross">
-								<img src="../static/images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div> -->
-					<!-- End Column 3 -->
-
-					<!-- Start Column 4 -->
-					<!-- <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-						<a class="product-item" href="../static/cart.html">
-							<img src="../static/images/product-3.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Ergonomic Chair</h3>
-							<strong class="product-price">$43.00</strong>
-
-							<span class="icon-cross">
-								<img src="../static/images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div> -->
-					<!-- End Column 4 -->
 
 				</div>
 			</div>
