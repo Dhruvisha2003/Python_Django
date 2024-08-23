@@ -29,9 +29,9 @@
 
 		<!-- Start Header/Navigation -->
 		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
-
+			{% load static %}
 			<div class="container">
-				<a class="navbar-brand" href="../static/index.html">Furni<span>.</span></a>
+				<a class="navbar-brand" href="{% url 'index' %}">Furni<span>.</span></a>
 
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -42,7 +42,7 @@
 					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
 						{% for i in menus %}
 						<li class="nav-item">
-							<a class="nav-link" href="">{{i.menu}}</a>
+							<a class="nav-link" href="{% static i.menu %}">{{i.}}</a>
 						</li>
 						{% endfor %}
 					</ul>
@@ -208,45 +208,21 @@
 			<div class="container">
 				<div class="row">
 
+					{% load static %}
+					{% for i in product_detail %}
 					<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
 						<div class="product-item-sm d-flex">
 							<div class="thumbnail">
-								<img src="../static/images/product-1.png" alt="Image" class="img-fluid">
+								<img src="{% static 'images/' %}{{i.photo}}" alt="Image" class="img-fluid">
 							</div>
 							<div class="pt-3">
-								<h3>Nordic Chair</h3>
-								<p>the interior of a building to achieve a healthier and more aesthetically pleasing environment </p>
-								<p><a href="#">Read More</a></p>
+								<h3>{{i.name}}</h3>
+								<p>{{i.detail}} </p>
+								<p><a href="#">{{i.readmore}}</a></p>
 							</div>
 						</div>
 					</div>
-
-					<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-						<div class="product-item-sm d-flex">
-							<div class="thumbnail">
-								<img src="../static/images/product-2.png" alt="Image" class="img-fluid">
-							</div>
-							<div class="pt-3">
-								<h3>Kruzo Aero Chair</h3>
-								<p>the interior of a building to achieve a healthier and more aesthetically pleasing environment </p>
-								<p><a href="#">Read More</a></p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-						<div class="product-item-sm d-flex">
-							<div class="thumbnail">
-								<img src="../static/images/product-3.png" alt="Image" class="img-fluid">
-							</div>
-							<div class="pt-3">
-								<h3>Ergonomic Chair</h3>
-								<p>the interior of a building to achieve a healthier and more aesthetically pleasing environment</p>
-								<p><a href="#">Read More</a></p>
-							</div>
-						</div>
-					</div>
-
+					{% endfor %}
 				</div>
 			</div>
 		</div>
