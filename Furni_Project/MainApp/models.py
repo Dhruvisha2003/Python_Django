@@ -32,3 +32,7 @@ class About(models.Model):
     position = models.CharField(max_length=50)
     details = models.CharField(max_length=255)
     link = models.CharField(max_length=20)
+
+class blog_list(models.Model):
+    photo = models.ImageField()
+    detail = models.CharField(max_length=100)

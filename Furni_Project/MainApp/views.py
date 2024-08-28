@@ -5,6 +5,7 @@ from .models import pdetails
 from .models import shop
 from .models import blogs
 from .models import About
+from .models import blog_list
 
 
 # Create your views here.
@@ -30,6 +31,11 @@ def Ourservice(request):
     return render(request,'services.html',{'services':services})
 
 def Blog(request):
-    blog_list = blogs.objects.all()
-    return render(request,'blog.html',{'blog_list':blog_list})
+    blog_detail = blog_list.objects.all()
+    return render(request,'blog.html',{'blog_detail':blog_detail})
 
+def contact(request):
+    return render(request,'contact.html')
+
+def addcart(request):
+    return render(request,'cart.html')

@@ -24,5 +24,7 @@ urlpatterns = [
     path('shop/',views.shopPage,name='shop'),
     path('about/',views.aboutus,name='aboutus'),
     path('services/',views.Ourservice,name='services'),
-    path('blog/',views.Blog,name='Ourblog')
+    path('blog/',views.Blog,name='Ourblog'),
+    path('contact/',views.contact,name='contactUs'),
+    path('Cart/',views.addcart,name='addcart')
 ]
