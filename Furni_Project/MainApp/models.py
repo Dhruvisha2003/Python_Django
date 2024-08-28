@@ -17,7 +17,18 @@ class pdetails(models.Model):
     detail = models.CharField(max_length=220)
     link = models.CharField(max_length=20)
 
+class blogs(models.Model):
+    images = models.ImageField()
+    line1 = models.CharField(max_length=100)
+
 class shop(models.Model):
     image = models.ImageField()
     name = models.CharField(max_length=20)
     price = models.CharField(max_length=10)
+
+class About(models.Model):
+    image = models.ImageField()
+    name = models.CharField(max_length=20)
+    position = models.CharField(max_length=50)
+    details = models.CharField(max_length=255)
+    link = models.CharField(max_length=20)
