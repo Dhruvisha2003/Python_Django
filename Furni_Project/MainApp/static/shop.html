@@ -36,7 +36,7 @@
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-
+				
 				<div class="collapse navbar-collapse" id="navbarsFurni">
 					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
 						<li class="nav-item ">
@@ -50,7 +50,7 @@
 					</ul>
 
 					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-						<li><a class="nav-link" href="#"><img src="../static/images/user.svg"></a></li>
+						<li><a class="nav-link" href="{% url 'login' %}"><img src="../static/images/user.svg"></a></li>
 						<li><a class="nav-link" href="{% url 'addcart' %}"><img src="../static/images/cart.svg"></a></li>
 					</ul>
 				</div>

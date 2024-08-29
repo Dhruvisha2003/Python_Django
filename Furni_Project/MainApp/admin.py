@@ -6,6 +6,7 @@ from .models import shop
 from .models import blogs
 from .models import About
 from .models import blog_list
+from .models import register
 
 
 admin.site.register(Menu)
@@ -15,5 +16,6 @@ admin.site.register(shop)
 admin.site.register(blogs)
 admin.site.register(About)
 admin.site.register(blog_list)
+admin.site.register(register)
 
 

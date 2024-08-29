@@ -36,3 +36,9 @@ class About(models.Model):
 class blog_list(models.Model):
     photo = models.ImageField()
     detail = models.CharField(max_length=100)
+
+class register(models.Model):
+    username = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
+    password = models.CharField(max_length=10)
+    cpassword = models.CharField(max_length=10)

@@ -26,5 +26,7 @@ urlpatterns = [
     path('services/',views.Ourservice,name='services'),
     path('blog/',views.Blog,name='Ourblog'),
     path('contact/',views.contact,name='contactUs'),
-    path('Cart/',views.addcart,name='addcart')
+    path('Cart/',views.addcart,name='addcart'),
+    path('Register/',views.signin,name='register'),
+    path('Login/',views.signup,name='login'),
 ]

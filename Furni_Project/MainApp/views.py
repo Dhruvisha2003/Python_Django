@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import *
+from django.http import HttpResponse
 from .models import Menu
 from .models import products
 from .models import pdetails
@@ -6,6 +7,7 @@ from .models import shop
 from .models import blogs
 from .models import About
 from .models import blog_list
+from .models import register
 
 
 # Create your views here.
@@ -39,3 +41,26 @@ def contact(request):
 
 def addcart(request):
     return render(request,'cart.html')
+
+def signin(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
+        cpassword = request.POST['cpassword']
+
+        user = register(username=username,email=email,password=password,cpassword=cpassword)
+        user.save()
+        return redirect('login')
+    return render(request,'signin.html')
+
+def signup(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        
+        log = register.objects.filter(email=email,password=password)
+        if log:
+            return redirect('/')
+        else:
+            return HttpResponse('Invalid Email or Password')
