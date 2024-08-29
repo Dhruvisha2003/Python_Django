@@ -1,5 +1,6 @@
 from django.shortcuts import *
 from django.http import HttpResponse
+from django.contrib.auth.hashers import check_password
 from .models import Menu
 from .models import products
 from .models import pdetails
@@ -56,11 +57,18 @@ def signin(request):
 
 def signup(request):
     if request.method == 'POST':
-        email = request.POST.get('email')
-        password = request.POST.get('password')
+        email = request.POST.get('email').strip()
+        password = request.POST.get('password').strip()
         
-        log = register.objects.filter(email=email,password=password)
+        log = register.objects.filter(email=email).first()
+        
         if log:
-            return redirect('/')
+            # Strip any whitespace from the stored password as well
+            if password == log.password.strip():
+                return redirect('/')
+            else:
+                return HttpResponse('Invalid Email or Password')
         else:
             return HttpResponse('Invalid Email or Password')
+    else:
+        return render(request, 'login.html')
